@@ -16,6 +16,7 @@ public class ClienteView extends javax.swing.JFrame {
      */
     public ClienteView() {
         initComponents();
+        
     }
 
     /**
@@ -30,8 +31,6 @@ public class ClienteView extends javax.swing.JFrame {
 
         jfCliente = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        txtTelefone = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
@@ -40,8 +39,9 @@ public class ClienteView extends javax.swing.JFrame {
         TBLCliente = new javax.swing.JTable();
         txtCodigo = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
-        txtCodigo1 = new javax.swing.JTextField();
-        txtCodigo2 = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        txtTelefone = new javax.swing.JTextField();
+        txtPesquisar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,14 +55,6 @@ public class ClienteView extends javax.swing.JFrame {
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jfCliente, org.jdesktop.beansbinding.ELProperty.create("${}"), jLabel1, org.jdesktop.beansbinding.BeanProperty.create("verticalAlignment"));
         bindingGroup.addBinding(binding);
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(231, 231, 231));
-        jLabel5.setText("TELEFONE :");
-
-        txtTelefone.setBackground(new java.awt.Color(137, 137, 137));
-        txtTelefone.setForeground(new java.awt.Color(231, 231, 231));
-        txtTelefone.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         btnSalvar.setBackground(new java.awt.Color(90, 90, 90));
         btnSalvar.setForeground(new java.awt.Color(231, 231, 231));
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/codigoFonte/br/ulbra/img/disk.png"))); // NOI18N
@@ -70,10 +62,12 @@ public class ClienteView extends javax.swing.JFrame {
 
         btnEditar.setBackground(new java.awt.Color(90, 90, 90));
         btnEditar.setForeground(new java.awt.Color(231, 231, 231));
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/codigoFonte/br/ulbra/img/edit.png"))); // NOI18N
         btnEditar.setText("EDITAR");
 
         btnExcluir.setBackground(new java.awt.Color(90, 90, 90));
         btnExcluir.setForeground(new java.awt.Color(231, 231, 231));
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/codigoFonte/br/ulbra/img/trash.png"))); // NOI18N
         btnExcluir.setText("EXCLUIR");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +77,7 @@ public class ClienteView extends javax.swing.JFrame {
 
         btnLimpar.setBackground(new java.awt.Color(90, 90, 90));
         btnLimpar.setForeground(new java.awt.Color(231, 231, 231));
+        btnLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/codigoFonte/br/ulbra/img/clean.png"))); // NOI18N
         btnLimpar.setText("LIMPAR");
 
         TBLCliente.setBackground(new java.awt.Color(90, 90, 90));
@@ -116,15 +111,22 @@ public class ClienteView extends javax.swing.JFrame {
             }
         });
 
-        txtCodigo1.setBackground(new java.awt.Color(42, 42, 42));
-        txtCodigo1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        txtCodigo1.setForeground(new java.awt.Color(231, 231, 231));
-        txtCodigo1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(231, 231, 231), new java.awt.Color(90, 90, 90), new java.awt.Color(137, 137, 137), null), "Codigo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(231, 231, 231))); // NOI18N
+        txtEmail.setBackground(new java.awt.Color(42, 42, 42));
+        txtEmail.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(231, 231, 231));
+        txtEmail.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(231, 231, 231), new java.awt.Color(90, 90, 90), new java.awt.Color(137, 137, 137), null), "E-mail", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(231, 231, 231))); // NOI18N
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
 
-        txtCodigo2.setBackground(new java.awt.Color(42, 42, 42));
-        txtCodigo2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        txtCodigo2.setForeground(new java.awt.Color(231, 231, 231));
-        txtCodigo2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(231, 231, 231), new java.awt.Color(90, 90, 90), new java.awt.Color(137, 137, 137), null), "Codigo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(231, 231, 231))); // NOI18N
+        txtTelefone.setBackground(new java.awt.Color(42, 42, 42));
+        txtTelefone.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        txtTelefone.setForeground(new java.awt.Color(231, 231, 231));
+        txtTelefone.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(231, 231, 231), new java.awt.Color(90, 90, 90), new java.awt.Color(137, 137, 137), null), "Telefone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(231, 231, 231))); // NOI18N
+
+        txtPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/codigoFonte/br/ulbra/img/search.png"))); // NOI18N
 
         javax.swing.GroupLayout jfClienteLayout = new javax.swing.GroupLayout(jfCliente);
         jfCliente.setLayout(jfClienteLayout);
@@ -132,40 +134,29 @@ public class ClienteView extends javax.swing.JFrame {
             jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jfClienteLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
                 .addGroup(jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jfClienteLayout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtTelefone))
+                        .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jfClienteLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(btnSalvar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnExcluir)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnLimpar))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfClienteLayout.createSequentialGroup()
-                        .addContainerGap(42, Short.MAX_VALUE)
-                        .addGroup(jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jfClienteLayout.createSequentialGroup()
-                                .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(3, 3, 3)))
-                .addGap(24, 24, 24))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfClienteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addGap(16, 16, 16))
-            .addGroup(jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfClienteLayout.createSequentialGroup()
-                    .addContainerGap(401, Short.MAX_VALUE)
-                    .addComponent(txtCodigo2, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(14, 14, 14)))
+                                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(42, 42, 42)
+                        .addGroup(jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jfClienteLayout.createSequentialGroup()
+                                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jfClienteLayout.setVerticalGroup(
             jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,40 +168,35 @@ public class ClienteView extends javax.swing.JFrame {
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addComponent(txtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
                 .addGroup(jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnEditar)
                     .addComponent(btnExcluir)
                     .addComponent(btnLimpar))
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
-            .addGroup(jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jfClienteLayout.createSequentialGroup()
-                    .addGap(141, 141, 141)
-                    .addComponent(txtCodigo2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(256, Short.MAX_VALUE)))
+                .addGap(76, 76, 76)
+                .addGroup(jfClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                    .addComponent(txtPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jfCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jfCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         bindingGroup.bind();
@@ -237,6 +223,10 @@ public class ClienteView extends javax.swing.JFrame {
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,13 +271,12 @@ public class ClienteView extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jfCliente;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtCodigo1;
-    private javax.swing.JTextField txtCodigo2;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JButton txtPesquisar;
     private javax.swing.JTextField txtTelefone;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
